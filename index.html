@@ -14,6 +14,24 @@
 <body>
 <a id="top"></a>
 
+<!-- SVG filters used by photo-frame.duotone -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="duotone-blue" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.33 0.5 0.16 0 0
+        0.33 0.5 0.16 0 0
+        0.33 0.5 0.16 0 0
+        0    0   0    1 0"/>
+      <feComponentTransfer>
+        <feFuncR tableValues="0.18 0.69"/>
+        <feFuncG tableValues="0.35 0.81"/>
+        <feFuncB tableValues="0.52 0.92"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
 <nav class="nav" id="nav">
   <a href="#top" class="nav-brand">
     <svg class="nav-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -27,6 +45,7 @@
     <a href="#amenazas">Amenazas</a>
     <a href="#modulos">Módulos</a>
     <a href="#metodo">Método</a>
+    <a href="#acerca">Acerca</a>
     <a href="#contacto" class="cta-link">Contacto</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
       <span class="nav-toggle-icon"><span></span><span></span><span></span></span>
@@ -39,7 +58,8 @@
   <a href="#amenazas" data-mobile-link><span>Amenazas</span><span class="num">02</span></a>
   <a href="#modulos" data-mobile-link><span>Módulos</span><span class="num">03</span></a>
   <a href="#metodo" data-mobile-link><span>Método</span><span class="num">04</span></a>
-  <a href="#contacto" data-mobile-link><span>Contacto</span><span class="num">05</span></a>
+  <a href="#acerca" data-mobile-link><span>Acerca</span><span class="num">05</span></a>
+  <a href="#contacto" data-mobile-link><span>Contacto</span><span class="num">06</span></a>
   <div class="mobile-menu-footer">
     <a href="mailto:miguemoreirait@gmail.com">miguemoreirait@gmail.com</a>
   </div>
@@ -50,15 +70,29 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-inner">
-      <div class="hero-snippet">
-        <span class="ln">01</span>
-        <span><span class="sym">/*</span> <span class="key">curso</span>: ciberseguridad · <span class="key">target</span>: pymes · <span class="key">duración</span>: 90min <span class="sym">*/</span></span>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-snippet">
+            <span class="ln">01</span>
+            <span><span class="sym">/*</span> <span class="key">curso</span>: ciberseguridad · <span class="key">target</span>: pymes · <span class="key">duración</span>: 90min <span class="sym">*/</span></span>
+          </div>
+          <div class="hero-eyebrow">Curso · 2026</div>
+          <h1>Concientización en <em>Ciberseguridad</em></h1>
+          <p class="hero-sub">
+            Un programa de 7 módulos diseñado para personas y Pymes que quieren reducir su exposición digital sin necesidad de conocimientos técnicos. Claro, práctico, basado en casos reales.
+          </p>
+        </div>
+
+        <div class="hero-photo">
+          <div class="photo-frame natural">
+            <img src="logos/photo-hero.jpg" alt="Miguel Moreira" />
+          </div>
+          <div class="photo-caption">
+            <span class="photo-caption-name">Miguel Moreira</span>
+            <span class="photo-caption-role">Lic. Tecnología de la Información</span>
+          </div>
+        </div>
       </div>
-      <div class="hero-eyebrow">Curso · 2026</div>
-      <h1>Concientización en <em>Ciberseguridad</em></h1>
-      <p class="hero-sub">
-        Un programa de 7 módulos diseñado para personas y Pymes que quieren reducir su exposición digital sin necesidad de conocimientos técnicos. Claro, práctico, basado en casos reales.
-      </p>
 
       <div class="hero-meta">
         <div class="hero-meta-item">
@@ -170,6 +204,51 @@
             <span class="approach-card-num">04 / Responder</span>
             <h3>Responder <em>antes</em> de paralizarse.</h3>
             <p>Lo que define el impacto de un incidente no es el ataque en sí, sino la velocidad y la claridad de la respuesta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACERCA DE MI -->
+  <section id="acerca" class="about-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head-tag">05 — Acerca de mí</div>
+        <h2>Hace más de 10 años que trabajo con tecnología y seguridad.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <div class="photo-frame natural">
+            <img src="logos/photo-about.jpg" alt="Miguel Moreira" />
+          </div>
+          <div class="about-credentials">
+            <div class="about-cred-item">
+              <span class="about-cred-label">Formación</span>
+              <span class="about-cred-value" style="font-size: 19px">Lic. en Tecnología de la Información
+</span>
+            </div>
+            <div class="about-cred-item">
+              <span class="about-cred-label">Diplomatura</span>
+              <span class="about-cred-value">Ciberseguridad y Seguridad de la Información</span>
+            </div>
+            <div class="about-cred-item">
+              <span class="about-cred-label">Experiencia</span>
+              <span class="about-cred-value">+10 años en IT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-body">
+          <p class="about-lead">Soy Miguel Moreira, Licenciado en Tecnología de la Información y Diplomado en Ciberseguridad. Trabajo en la Policia Federal Argentina hace más de una década, operando sistemas críticos, infraestructura de videovigilancia y redes en entornos de alta demanda.</p>
+          <p>Con el tiempo entendí que la mayoría de los incidentes de seguridad no ocurren por fallas tecnológicas, sino porque las personas no tienen la información que necesitan para tomar mejores decisiones digitales. Ese fue el punto de partida de este programa.</p>
+          <p>Mi trabajo es traducir un mundo complejo a un lenguaje que cualquier persona pueda entender y aplicar. Porque la ciberseguridad solo funciona cuando deja de ser algo técnico y se convierte en un hábito.</p>
+          <div class="about-tags">
+            <span class="about-tag">Concientización</span>
+            <span class="about-tag">Capacitación a Pymes</span>
+            <span class="about-tag">Auditorías básicas</span>
+            <span class="about-tag">Consultoría</span>
           </div>
         </div>
       </div>

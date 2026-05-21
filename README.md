@@ -6,14 +6,19 @@ Sitio one-page del curso de **Concientización en Ciberseguridad**.
 
 ```
 portfolio/
-├── index.html      ← punto de entrada
-├── styles.css      ← estilos completos
-├── script.js       ← interactividad (carrousel, módulos, menú)
-├── logos/          ← favicon + nav/footer mark
+├── index.html              ← punto de entrada
+├── styles.css              ← estilos completos
+├── script.js               ← interactividad (carrousel, módulos, menú)
+├── logos/
+│   ├── monogram.svg        ← favicon + nav/footer
+│   ├── monogram-dark.svg   ← versión oscura
+│   ├── photo-hero.jpg      ← foto del hero (900×900)
+│   ├── photo-about.jpg     ← foto del Acerca de mí (1200×1500)
+│   └── photo-placeholder.svg
 └── .gitignore
 ```
 
-## Deploy
+## 🚀 Deploy
 
 ### 1 — GitHub
 
@@ -29,13 +34,20 @@ git push -u origin main
 
 1. Entrar a [vercel.com](https://vercel.com) y conectarse con GitHub
 2. **Add New → Project → Import** el repo
-3. Click **Deploy** (sin configuración, Vercel detecta sitio estático)
+3. Click **Deploy** (Vercel detecta sitio estático automáticamente)
 
-Cada `git push` redeploya automáticamente.
+Cada `git push` redeploya solo.
 
 ### Dominio propio (opcional)
 
 Vercel → **Settings → Domains** → agregar dominio + configurar DNS.
+
+## ✏️ Edición rápida
+
+- **Bio en "Acerca de mí"**: editá los párrafos dentro de `#acerca` en `index.html`
+- **Credenciales**: los `<div class="about-cred-item">` (Formación / Diplomatura / Experiencia)
+- **Tags**: bajo la bio, en `.about-tags`
+- **WhatsApp**: link `https://wa.me/5491130578169` en la sección CTA
 
 ---
 
