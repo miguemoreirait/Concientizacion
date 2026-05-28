@@ -881,6 +881,7 @@
     background: var(--bg);
     border-top: 1px solid var(--line);
     position: relative;
+    padding-bottom: 0;
   }
   .about-grid {
     display: grid;
@@ -982,7 +983,7 @@
 
   /* ============ CTA ============ */
   .cta {
-    padding: 160px 0;
+    padding: 60px 0 140px;
     position: relative;
   }
   .cta-inner {
@@ -1141,7 +1142,17 @@
     .hero-photo { max-width: 280px; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .about-photo { max-width: 320px; }
-    .about-lead { font-size: 24px; }
+    .about-lead {
+      font-size: 22px;
+      line-height: 1.4;
+      text-align: left;
+      hyphens: manual;
+    }
+    .about-body p:not(.about-lead) {
+      text-align: left;
+      hyphens: manual;
+    }
+    .about-section { padding-bottom: 0; }
     .amenazas-head { gap: 24px; margin-bottom: 40px; }
     .carousel-track-wrap { margin: 0 -24px; padding: 8px 24px; }
     .threat-card { flex-basis: 280px; min-height: 280px; padding: 28px 24px; }
@@ -1170,6 +1181,9 @@
     .hero-meta { gap: 24px; }
     .hero-meta-value { font-size: 20px; }
     .intro-body .lead { font-size: 22px; }
+    .about-lead { font-size: 19px; line-height: 1.45; }
+    .about-body p:not(.about-lead) { font-size: 15px; }
+    .about-section { padding-bottom: 0; }
     .approach-card { padding: 32px 24px; min-height: auto; }
     .approach-card h3 { font-size: 24px; }
     .cta-inner { padding: 40px 24px; }
