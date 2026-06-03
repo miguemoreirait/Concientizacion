@@ -26,7 +26,7 @@ portfolio/
 git init
 git add .
 git commit -m "first commit"
-git remote add origin https://github.com/TU-USUARIO/concientizacion-ciberseguridad.git
+git remote add origin https://github.com/miguemoreirait/concientizacion.git
 git push -u origin main
 ```
 

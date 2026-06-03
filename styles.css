@@ -198,6 +198,8 @@
     border: none;
     padding: 4px 0;
     text-transform: none;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   /* ============ LAYOUT ============ */
@@ -1163,11 +1165,11 @@
     .intro-body { grid-template-columns: 1fr; gap: 24px; }
     .approach-grid { grid-template-columns: 1fr; gap: 24px; }
     .approach-cards { grid-template-columns: 1fr; }
-    .module-row { grid-template-columns: 50px 1fr 36px; gap: 16px; padding: 24px 0; }
+    .module-row { grid-template-columns: 50px 1fr 36px; gap: 16px; padding: 24px 20px; }
     .module-tag { display: none; }
     .module-num { font-size: 28px; }
     .module-title { font-size: 20px; }
-    .module-detail-inner { grid-template-columns: 1fr; gap: 24px; padding: 0 0 32px; }
+    .module-detail-inner { grid-template-columns: 1fr; gap: 24px; padding: 0 20px 32px 20px; }
     .module-detail-inner .spacer { display: none; }
     .cta { padding: 80px 0; }
     .cta-inner { padding: 48px 28px; }
@@ -1191,7 +1193,9 @@
     .module-title { font-size: 17px; }
     .module-objetivo { font-size: 18px; padding-left: 18px; }
     .module-content { font-size: 15px; }
-    .mobile-menu a { font-size: 32px; padding: 14px 0; }
+    .module-detail-inner { padding: 0 16px 32px 16px; }
+    .module-row { padding: 24px 16px; }
+    .mobile-menu > a[data-mobile-link] { font-size: 32px; padding: 14px 0; }
     .footer-row { flex-direction: column; align-items: flex-start; }
     .nav-brand { font-size: 18px; }
     .nav-brand .nav-mark { width: 26px; height: 26px; }
