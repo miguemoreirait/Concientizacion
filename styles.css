@@ -1141,7 +1141,7 @@
     .hero-snippet { font-size: 11px; padding: 8px 12px; gap: 10px; }
     .hero-snippet .ln { display: none; }
     .hero-grid { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
-    .hero-photo { max-width: 280px; }
+    .hero-photo { max-width: 280px; margin-left: auto; margin-right: auto; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
     .about-photo { max-width: 320px; }
     .about-lead {
@@ -1175,6 +1175,10 @@
     .cta-inner { padding: 48px 28px; }
     .hero-meta { gap: 32px; }
     .nav-links .cta-link { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .threat-card { flex: 0 0 calc(100vw - 48px); }
   }
 
   @media (max-width: 560px) {
