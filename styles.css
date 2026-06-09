@@ -1147,12 +1147,10 @@
     .about-lead {
       font-size: 22px;
       line-height: 1.4;
-      text-align: left;
-      hyphens: manual;
     }
     .about-body p:not(.about-lead) {
-      text-align: left;
-      hyphens: manual;
+      text-align: justify;
+      hyphens: auto;
     }
     .about-section { padding-bottom: 0; }
     .amenazas-head { gap: 24px; margin-bottom: 40px; }
