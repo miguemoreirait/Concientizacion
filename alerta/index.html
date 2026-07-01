@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerta de Seguridad · MigueMoreiraIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13203A; --navy-2:#1A2A4A; --accent:#2E75B6;
+    --red:#C8453A; --red-bright:#E8453A; --teal:#00E5C7; --green:#2BB673;
+    --ink:#E6EEF6; --muted:#94B4D2; --line:rgba(148,180,210,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{min-height:100%}
+  body{
+    background:var(--navy); color:var(--ink);
+    font-family:'Geist',system-ui,sans-serif; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    display:flex; align-items:center; justify-content:center;
+    min-height:100vh; padding:24px;
+    background-image:radial-gradient(120% 80% at 0% 0%, #1A2A4A 0%, #13203A 55%, #0E1830 100%);
+    transition:background 1.2s ease;
+  }
+  body.phase-alert{
+    background-image:radial-gradient(120% 80% at 50% 0%, #3A1414 0%, #2A0E0E 60%, #1A0808 100%);
+  }
+  .stage{width:100%;max-width:620px}
+
+  /* FASE 1 */
+  .alert{text-align:center;padding:20px 8px;animation:flashIn .4s ease}
+  .alert .siren{font-size:54px;line-height:1;margin-bottom:20px;animation:pulse 1s ease-in-out infinite}
+  .alert .tag{
+    display:inline-block;font-family:'JetBrains Mono',monospace;
+    font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+    color:#fff;background:var(--red);padding:8px 18px;border-radius:6px;
+    margin-bottom:24px;font-weight:500;
+  }
+  .alert h1{
+    font-family:'Geist',sans-serif;font-weight:600;
+    font-size:clamp(24px,5vw,32px);line-height:1.25;color:#fff;margin-bottom:18px;
+  }
+  .alert .sub{font-family:'JetBrains Mono',monospace;font-size:14px;color:#F0A8A2;margin-bottom:8px}
+  .alert .bar{height:6px;width:100%;max-width:320px;margin:24px auto 0;
+    background:rgba(255,255,255,.12);border-radius:999px;overflow:hidden}
+  .alert .bar span{display:block;height:100%;width:0;background:var(--red-bright);
+    animation:fill 5s ease-out forwards}
+  .alert .dots::after{content:"";animation:dots 1.2s steps(4,end) infinite}
+
+  /* FASE 2 */
+  .reveal{display:none;animation:fadeUp .7s ease}
+  .reveal.show{display:block}
+  .card{width:100%;background:rgba(20,40,61,.55);border:1px solid var(--line);
+    border-radius:20px;padding:48px 40px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .ok-tag{display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--green);border:1px solid rgba(43,182,115,.4);
+    background:rgba(43,182,115,.1);padding:7px 14px;border-radius:999px;margin-bottom:26px}
+  h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;
+    font-size:clamp(34px,7vw,52px);line-height:1.06;letter-spacing:-.01em;margin-bottom:22px}
+  h2 em{color:var(--accent);font-style:italic}
+  .lead{font-size:18px;color:var(--ink);margin-bottom:18px}
+  .lead strong{color:#fff;font-weight:600}
+  p.body{font-size:16px;color:var(--muted);margin-bottom:18px}
+  .divider{height:1px;background:var(--line);margin:30px 0}
+  .points{list-style:none;display:grid;gap:14px;margin-bottom:8px}
+  .points li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;color:var(--ink)}
+  .points li::before{content:"→";color:var(--teal);font-family:'JetBrains Mono',monospace;flex:0 0 auto;margin-top:1px}
+  .footer{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .brand{font-family:'Instrument Serif',serif;font-size:18px;color:var(--ink)}
+  .brand i{font-style:italic;color:var(--accent)}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted)}
+
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.65;transform:scale(.94)}}
+  @keyframes fill{to{width:100%}}
+  @keyframes flashIn{from{opacity:0}to{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}100%{content:""}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}.alert .bar span{width:100%}}
+  @media(max-width:520px){.card{padding:36px 24px}}
+</style>
+</head>
+<body class="phase-alert">
+  <div class="stage">
+    <section class="alert" id="alert">
+      <div class="siren">🔴</div>
+      <span class="tag">Alerta de seguridad</span>
+      <h1>Su dispositivo ha sido comprometido.</h1>
+      <p class="sub">Sus datos están siendo transferidos<span class="dots"></span></p>
+      <div class="bar"><span></span></div>
+    </section>
+
+    <section class="reveal" id="reveal">
+      <div class="card">
+        <span class="ok-tag">✅ Tranquilo · esto fue una simulación</span>
+        <h2>Acabás de experimentar <em>una trampa digital.</em></h2>
+        <p class="lead">Si escaneaste el QR sin pensarlo dos veces, ahora sabés <strong>por qué la ciberseguridad empieza con la conciencia.</strong></p>
+        <p class="body">Un código QR es solo un enlace disfrazado: no podés ver a dónde lleva hasta que ya lo abriste. Los atacantes lo saben — pegan QR falsos sobre los reales en estacionamientos, cartas de restaurantes, carteles o facturas, y te llevan a páginas que roban tus datos o instalan malware. Esta vez era seguro. La próxima podría no serlo.</p>
+        <div class="divider"></div>
+        <ul class="points">
+          <li>Antes de escanear, fijate quién y dónde puso ese QR. ¿Tiene sentido que esté ahí?</li>
+          <li>Cuando se abra el enlace, mirá la dirección antes de tocar nada. Si no coincide con el sitio esperado, salí.</li>
+          <li>Desconfiá de QR que piden datos, pagos o descargas urgentes.</li>
+          <li>Ante la duda, no escanees: entrá al sitio oficial escribiendo vos la dirección.</li>
+        </ul>
+        <div class="footer">
+          <span class="brand">MigueMoreira<i>IT</i></span>
+          <span class="mono">Concientización en Ciberseguridad</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<script>
+  var DELAY = 5200;
+  setTimeout(function(){
+    document.body.classList.remove('phase-alert');
+    document.getElementById('alert').style.display = 'none';
+    document.getElementById('reveal').classList.add('show');
+  }, DELAY);
+</script>
+</body>
+</html>
